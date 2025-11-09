@@ -5,6 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="robots" content="noindex, nofollow">
     <title>Voss Digital Ltd - Coming Soon</title>
+    <link rel="icon" type="image/png" href="Images/vd-icon-white.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
     <!-- Google Tag Manager -->
     <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
     new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -20,63 +24,260 @@
         }
 
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background: linear-gradient(135deg, #006CFF 0%, #9143f6 100%);
             min-height: 100vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            color: #333;
+            color: #0A0A0A;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Animated geometric background */
+        .bg-shapes {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            overflow: hidden;
+        }
+
+        .shape {
+            position: absolute;
+            opacity: 0.05;
+            animation: float 20s infinite ease-in-out;
+        }
+
+        .shape:nth-child(1) {
+            width: 200px;
+            height: 200px;
+            border: 3px solid rgba(255, 255, 255, 0.2);
+            top: 10%;
+            left: 10%;
+            animation-delay: 0s;
+            clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+        }
+
+        .shape:nth-child(2) {
+            width: 150px;
+            height: 150px;
+            border: 3px solid rgba(255, 255, 255, 0.2);
+            top: 60%;
+            right: 15%;
+            animation-delay: 5s;
+            clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+        }
+
+        .shape:nth-child(3) {
+            width: 100px;
+            height: 100px;
+            border: 3px solid rgba(255, 255, 255, 0.2);
+            bottom: 20%;
+            left: 20%;
+            animation-delay: 10s;
+            clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0) rotate(0deg);
+            }
+            50% {
+                transform: translateY(-30px) rotate(5deg);
+            }
         }
 
         .container {
-            background: white;
-            padding: 3rem 2rem;
-            border-radius: 10px;
-            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            background: #FFFFFF;
+            padding: 4rem 3rem;
+            border-radius: 20px;
+            box-shadow: 0 25px 80px rgba(0, 108, 255, 0.15);
             text-align: center;
             max-width: 600px;
             width: 90%;
+            position: relative;
+            z-index: 1;
+            animation: fadeIn 0.8s ease-out;
         }
 
-        h1 {
-            font-size: 2.5rem;
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .logo {
+            width: 180px;
+            height: auto;
+            margin-bottom: 2.5rem;
+            animation: logoFloat 3s ease-in-out infinite;
+        }
+
+        @keyframes logoFloat {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        h2 {
+            font-size: 1.8rem;
+            font-weight: 600;
             margin-bottom: 1rem;
-            color: #667eea;
+            color: #0A0A0A;
         }
 
         p {
             font-size: 1.1rem;
-            color: #666;
-            margin-bottom: 2rem;
+            font-weight: 400;
+            color: #6B7280;
+            margin-bottom: 2.5rem;
+            line-height: 1.6;
+        }
+
+        .status-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #006CFF 0%, #0052CC 100%);
+            color: #FFFFFF;
+            padding: 0.5rem 1.5rem;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-top: 1rem;
+            box-shadow: 0 4px 15px rgba(0, 108, 255, 0.3);
+        }
+
+        .dots {
+            display: inline-flex;
+            gap: 0.3rem;
+            margin-left: 0.5rem;
+        }
+
+        .dot {
+            width: 6px;
+            height: 6px;
+            background: #FFFFFF;
+            border-radius: 50%;
+            animation: pulse 1.5s ease-in-out infinite;
+        }
+
+        .dot:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+
+        .dot:nth-child(3) {
+            animation-delay: 0.4s;
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                opacity: 0.3;
+            }
+            50% {
+                opacity: 1;
+            }
+        }
+
+        .header-icon {
+            position: fixed;
+            top: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 50px;
+            height: 50px;
+            z-index: 2;
         }
 
         footer {
             position: fixed;
-            bottom: 0;
-            width: 100%;
-            background: rgba(255,255,255,0.95);
-            padding: 1rem;
+            bottom: 1.5rem;
+            left: 1.5rem;
+            right: 1.5rem;
+            background: rgba(255, 255, 255, 0.25);
+            backdrop-filter: blur(10px);
+            padding: 1.25rem 1.5rem;
             text-align: center;
-            border-top: 1px solid #ddd;
+            border-radius: 15px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+            z-index: 2;
         }
 
         footer a {
-            color: #667eea;
+            color: #FFFFFF;
             text-decoration: none;
             margin: 0 1rem;
             font-size: 0.9rem;
+            font-weight: 600;
+            transition: all 0.2s ease;
+            text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
         }
 
         footer a:hover {
+            color: #F9FAFB;
             text-decoration: underline;
         }
 
         .company-info {
             font-size: 0.85rem;
-            color: #999;
+            color: #FFFFFF;
             margin-top: 0.5rem;
+            font-weight: 400;
+            opacity: 0.9;
+            text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+        }
+
+        @media (max-width: 768px) {
+            .header-icon {
+                top: 1.5rem;
+                width: 40px;
+                height: 40px;
+            }
+
+            .container {
+                padding: 3rem 2rem;
+                margin-left: 5%;
+                margin-right: 5%;
+            }
+
+            .logo {
+                width: 140px;
+            }
+
+            h2 {
+                font-size: 1.5rem;
+            }
+
+            p {
+                font-size: 1rem;
+            }
+
+            .bg-shapes {
+                display: none;
+            }
+
+            footer {
+                bottom: 1rem;
+                left: 5%;
+                right: 5%;
+                padding: 1rem;
+            }
+
+            footer a {
+                display: block;
+                margin: 0.5rem 0;
+            }
         }
     </style>
 </head>
@@ -85,9 +286,29 @@
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TLNMJHCF"
     height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- End Google Tag Manager (noscript) -->
+
+    <!-- Header Icon -->
+    <img src="Images/vd-icon-white.svg" alt="VossDigital" class="header-icon">
+
+    <!-- Animated background shapes -->
+    <div class="bg-shapes">
+        <div class="shape"></div>
+        <div class="shape"></div>
+        <div class="shape"></div>
+    </div>
+
     <div class="container">
-        <h1>Voss Digital Ltd</h1>
-        <p>We're working on something exciting. Check back soon.</p>
+        <img src="Images/vd-logo-stacked.svg" alt="VossDigital" class="logo">
+        <h2>Something Exciting is Coming</h2>
+        <p>We're crafting digital experiences that inspire and perform. Stay tuned for the launch.</p>
+        <div class="status-badge">
+            In Development
+            <span class="dots">
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+            </span>
+        </div>
     </div>
 
     <footer>
