@@ -105,6 +105,21 @@
             animation-delay: 0.4s;
         }
     </style>
+    <script>
+        function copyEmail() {
+            const email = 'info@vossdigital.co.uk';
+            navigator.clipboard.writeText(email).then(() => {
+                const message = document.getElementById('emailCopied');
+                message.style.opacity = '1';
+                setTimeout(() => {
+                    message.style.opacity = '0';
+                }, 3000);
+            }).catch(err => {
+                // Fallback: try mailto as backup
+                window.location.href = 'mailto:' + email;
+            });
+        }
+    </script>
 </head>
 <body class="min-h-screen flex flex-col items-center text-[#0A0A0A] relative bg-gradient-to-br from-[#006CFF] to-[#9143f6] pt-24 pb-8 gap-8 md:justify-center md:py-32 md:overflow-hidden">
     <!-- Google Tag Manager (noscript) -->
@@ -126,15 +141,18 @@
         <div class="bg-white py-12 px-8 mx-[5%] md:py-16 md:px-12 md:mx-0 rounded-[20px] shadow-[0_25px_80px_rgba(0,108,255,0.15)] text-center max-w-[600px] w-[90%] relative z-[1] animate-fadeIn">
             <img src="Images/vd-logo-inline.svg" alt="VossDigital" class="w-[140px] md:w-[220px] h-auto mb-10 mx-auto">
             <h2 class="text-2xl md:text-[1.8rem] font-semibold mb-4 text-[#0A0A0A]">Something Exciting is Coming</h2>
-            <p class="text-base md:text-lg font-normal text-gray-500 mb-10 leading-relaxed">We're crafting digital experiences that inspire and perform. Stay tuned for the launch.</p>
-            <div class="inline-block bg-gradient-to-br from-[#006CFF] to-[#0052CC] text-white py-2 px-6 rounded-full text-sm font-semibold mt-4 shadow-[0_4px_15px_rgba(0,108,255,0.3)]">
-                In Development
-                <span class="inline-flex gap-[0.3rem] ml-2">
-                    <span class="dot w-1.5 h-1.5 bg-white rounded-full animate-pulse-dot"></span>
-                    <span class="dot w-1.5 h-1.5 bg-white rounded-full animate-pulse-dot"></span>
-                    <span class="dot w-1.5 h-1.5 bg-white rounded-full animate-pulse-dot"></span>
+            <p class="text-base md:text-lg font-normal text-gray-500 mb-6 leading-relaxed">We're crafting digital experiences that inspire and perform. Stay tuned for the launch.</p>
+            <p class="text-base font-normal text-gray-600 mb-6">Have a project in mind? Get in touch:</p>
+            <button onclick="copyEmail()" class="inline-block bg-gradient-to-br from-[#006CFF] to-[#0052CC] text-white py-3 px-8 rounded-full text-base font-semibold shadow-[0_4px_15px_rgba(0,108,255,0.3)] hover:shadow-[0_6px_20px_rgba(0,108,255,0.4)] transition-all duration-200 hover:scale-105 cursor-pointer border-0">info@vossdigital.co.uk</button>
+            <p id="emailCopied" class="text-xs text-green-600 mt-2 font-semibold opacity-0 transition-opacity duration-300">Copied to clipboard!</p>
+            <p class="text-sm text-gray-400 mt-6 font-normal">
+                Site in development
+                <span class="inline-flex gap-[0.3rem] ml-2 align-middle">
+                    <span class="dot w-1.5 h-1.5 bg-gray-400 rounded-full animate-pulse-dot"></span>
+                    <span class="dot w-1.5 h-1.5 bg-gray-400 rounded-full animate-pulse-dot"></span>
+                    <span class="dot w-1.5 h-1.5 bg-gray-400 rounded-full animate-pulse-dot"></span>
                 </span>
-            </div>
+            </p>
         </div>
     </div>
 
