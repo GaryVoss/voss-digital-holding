@@ -86,9 +86,9 @@
         }
     </style>
     <script>
-        function copyEmail(email) {
+        function copyEmail(email, id) {
             navigator.clipboard.writeText(email).then(() => {
-                const message = document.getElementById('emailCopied');
+                const message = document.getElementById(id);
                 message.style.opacity = '1';
                 setTimeout(() => {
                     message.style.opacity = '0';
@@ -117,7 +117,7 @@
                 <h1 class="text-3xl md:text-4xl font-bold mb-6 text-[#0A0A0A]">Looking for Satellite Creative?</h1>
 
                 <p class="text-base md:text-lg text-gray-700 mb-6 leading-relaxed">
-                    After 25 successful years in the industry, Satellite Creative Ltd has now ceased trading.
+                    After 25+ successful years in the industry, Satellite Creative Ltd has now ceased trading.
                 </p>
 
                 <p class="text-base md:text-lg text-gray-700 mb-6 leading-relaxed">
@@ -126,7 +126,7 @@
 
                 <h2 class="text-2xl md:text-3xl font-semibold mb-4 text-[#0A0A0A]">VossDigital - Web Development & Digital Support</h2>
                 <p class="text-base md:text-lg text-gray-700 mb-6 leading-relaxed">
-                   Voss Digital Ltd is a Newcastle upon Tyne–based web development agency providing professional website development, ongoing maintenance, and technical support to businesses throughout the UK.
+                   Voss Digital Ltd is a Newcastle upon Tyne based web development agency providing professional website development, ongoing maintenance, and technical support to businesses throughout the UK.
                 </p>
                 <p class="text-base md:text-lg text-gray-700 mb-6 leading-relaxed">
                     Founded in 2025 by Gary Voss, who previously served as Lead Developer at Satellite Creative, VossDigital continues to support many of Satellite’s long-standing clients while building new partnerships with businesses seeking reliable, professional web development services.
@@ -141,20 +141,27 @@
                 </ul>
 
                 <h3 class="text-xl md:text-2xl font-semibold mb-4 text-[#0A0A0A]">Have a digital project in mind?</h3>
-                <button onclick="copyEmail('info@vossdigital.co.uk')" class="inline-block bg-gradient-to-br from-[#006CFF] to-[#0052CC] text-white py-3 px-8 rounded-full text-base font-semibold shadow-[0_4px_15px_rgba(0,108,255,0.3)] hover:shadow-[0_6px_20px_rgba(0,108,255,0.4)] transition-all duration-200 hover:scale-105 cursor-pointer border-0">info@vossdigital.co.uk</button>
-                <p id="emailCopied" class="text-xs text-green-600 mt-2 font-semibold opacity-0 transition-opacity duration-300">Copied to clipboard!</p>
+                <button onclick="copyEmail('info@vossdigital.co.uk', 'emailCopied-vd')" class="inline-block bg-gradient-to-br from-[#006CFF] to-[#0052CC] text-white py-3 px-8 rounded-full text-base font-semibold shadow-[0_4px_15px_rgba(0,108,255,0.3)] hover:shadow-[0_6px_20px_rgba(0,108,255,0.4)] transition-all duration-200 hover:scale-105 cursor-pointer border-0">info@vossdigital.co.uk</button>
+                <p id="emailCopied-vd" class="text-xs text-green-600 mt-2 font-semibold opacity-0 transition-opacity duration-300">Copied to clipboard!</p>
                 
-                <h2 class="text-2xl md:text-3xl font-semibold mt-10 mb-4 text-[#0A0A0A]">Blackhurst.co - Design & Print Services</h2>
+                <h2 class="text-2xl md:text-3xl font-semibold mt-10 mb-4 text-[#0A0A0A]">Blackhurst.co - Creative Services</h2>
                 <p class="text-base md:text-lg text-gray-700 mb-6 leading-relaxed">
-                   Dylan Blackhurst, former Creative Director at Satellite Creative, continues to provide professional design and print services through his new venture, Blackhurst.co.
+                   Dylan Blackhurst, former Creative Director at Satellite Creative, now leads Blackhurst.co – dedicated to purposeful and intelligent design.
                 </p>
                 <p class="text-base md:text-lg text-gray-700 mb-6 leading-relaxed">
-                    With over 30 years of experience in creative direction, branding, and print production, Dylan continues to support many of Satellite’s long-standing clients with the same creativity, precision, and care they’ve come to expect.
+                    With over three decades of experience shaping brands of every scale, Dylan continues to collaborate with many long-standing Satellite clients – delivering the same clarity, craft and creative precision that define his work.
                 </p>
+                <h3 class="text-xl md:text-2xl font-semibold mb-4 text-[#0A0A0A]">Services include:</h3>
+                <ul class="list-disc list-inside text-base md:text-lg text-gray-700 mb-8 space-y-2 leading-relaxed">
+                    <li>Branding</li>
+                    <li>Advertising</li>
+                    <li>Packaging</li>
+                    <li>UI</li>
+                </ul>
 
                 <h3 class="text-xl md:text-2xl font-semibold mb-4 text-[#0A0A0A]">Have a design project in mind?</h3>
-                <button onclick="copyEmail('dylan@blackhurst.co')" class="inline-block bg-gradient-to-br from-[#006CFF] to-[#0052CC] text-white py-3 px-8 rounded-full text-base font-semibold shadow-[0_4px_15px_rgba(0,108,255,0.3)] hover:shadow-[0_6px_20px_rgba(0,108,255,0.4)] transition-all duration-200 hover:scale-105 cursor-pointer border-0">dylan@blackhurst.co</button>
-                <p id="emailCopied" class="text-xs text-green-600 mt-2 font-semibold opacity-0 transition-opacity duration-300">Copied to clipboard!</p>
+                <button onclick="copyEmail('dylan@blackhurst.co', 'emailCopied-db')" class="inline-block bg-gradient-to-br from-[#006CFF] to-[#0052CC] text-white py-3 px-8 rounded-full text-base font-semibold shadow-[0_4px_15px_rgba(0,108,255,0.3)] hover:shadow-[0_6px_20px_rgba(0,108,255,0.4)] transition-all duration-200 hover:scale-105 cursor-pointer border-0">dylan@blackhurst.co</button>
+                <p id="emailCopied-db" class="text-xs text-green-600 mt-2 font-semibold opacity-0 transition-opacity duration-300">Copied to clipboard!</p>
 
                 <h2 class="text-2xl md:text-3xl font-semibold mt-10 mb-4 text-[#0A0A0A]">Continuing Collaboration</h2>
                 <p class="text-base md:text-lg text-gray-700 mb-6 leading-relaxed">
