@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>VossDigital | Coming Soon</title>
-    <meta name="description" content="VossDigital - Newcastle upon Tyne web development agency. Professional website development, maintenance, and technical support for businesses throughout the UK.">
+    <title>Looking for Satellite Creative? Meet VossDigital & Blackhurst.co</title>
+    <meta name="description" content="Satellite Creative may be gone, but its team isn’t. VossDigital delivers web and digital services, while Blackhurst.co provides design & print..">
     <link rel="icon" type="image/png" href="Images/vd-icon-white.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -29,6 +29,14 @@
     })(window,document,'script','dataLayer','GTM-TLNMJHCF');</script>
     <!-- End Google Tag Manager -->
     <style>
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0) rotate(0deg);
+            }
+            50% {
+                transform: translateY(-30px) rotate(5deg);
+            }
+        }
 
         @keyframes fadeIn {
             from {
@@ -41,22 +49,12 @@
             }
         }
 
-        @keyframes pulse {
-            0%, 100% {
-                opacity: 0.3;
-            }
-            50% {
-                opacity: 1;
-            }
+        .animate-float {
+            animation: float 20s infinite ease-in-out;
         }
-
 
         .animate-fadeIn {
             animation: fadeIn 0.8s ease-out;
-        }
-
-        .animate-pulse-dot {
-            animation: pulse 1.5s ease-in-out infinite;
         }
 
         .shape:nth-child(1) {
@@ -85,18 +83,9 @@
             animation-delay: 10s;
             clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
         }
-
-        .dot:nth-child(2) {
-            animation-delay: 0.2s;
-        }
-
-        .dot:nth-child(3) {
-            animation-delay: 0.4s;
-        }
     </style>
     <script>
-        function copyEmail() {
-            const email = 'info@vossdigital.co.uk';
+        function copyEmail(email) {
             navigator.clipboard.writeText(email).then(() => {
                 const message = document.getElementById('emailCopied');
                 message.style.opacity = '1';
@@ -104,7 +93,6 @@
                     message.style.opacity = '0';
                 }, 3000);
             }).catch(err => {
-                // Fallback: try mailto as backup
                 window.location.href = 'mailto:' + email;
             });
         }
@@ -124,20 +112,52 @@
         </div>
 
         <div class="flex-grow flex items-center justify-center w-full my-8">
-            <div class="bg-white py-12 px-8 md:py-16 md:px-12 rounded-[20px] shadow-[0_25px_80px_rgba(0,108,255,0.15)] text-center max-w-[600px] w-full relative z-[1] animate-fadeIn">
-                <img src="Images/vd-logo-inline.svg" alt="VossDigital" class="w-[140px] md:w-[220px] h-auto mb-10 mx-auto">
-                <h1 class="text-2xl md:text-[1.8rem] font-semibold mb-4 text-[#0A0A0A]">Something Exciting is Coming</h1>
-                <p class="text-base md:text-lg font-normal text-gray-700 mb-6 leading-relaxed">We're crafting digital experiences that inspire and perform. Stay tuned for the launch.</p>
-                <p class="text-base font-normal text-gray-700 mb-6">Have a project in mind? Get in touch:</p>
-                <button onclick="copyEmail()" class="inline-block bg-gradient-to-br from-[#006CFF] to-[#0052CC] text-white py-3 px-8 rounded-full text-base font-semibold shadow-[0_4px_15px_rgba(0,108,255,0.3)] hover:shadow-[0_6px_20px_rgba(0,108,255,0.4)] transition-all duration-200 hover:scale-105 cursor-pointer border-0">info@vossdigital.co.uk</button>
+            <div class="bg-white py-12 px-8 md:py-16 md:px-12 rounded-[20px] shadow-[0_25px_80px_rgba(0,108,255,0.15)] max-w-[900px] w-full relative z-[1] animate-fadeIn">
+                <h1 class="text-3xl md:text-4xl font-bold mb-6 text-[#0A0A0A]">Looking for Satellite Creative?</h1>
+
+                <p class="text-base md:text-lg text-gray-700 mb-6 leading-relaxed">
+                    After 25 successful years in the industry, Satellite Creative Ltd has now ceased trading.
+                </p>
+
+                <p class="text-base md:text-lg text-gray-700 mb-6 leading-relaxed">
+                    While Satellite’s doors have closed, the people who made it what it was are continuing to do what they do best.
+                </p>
+
+                <h2 class="text-2xl md:text-3xl font-semibold mb-4 text-[#0A0A0A]">VossDigital - Web Development & Digital Support</h2>
+                <p class="text-base md:text-lg text-gray-700 mb-6 leading-relaxed">
+                   Voss Digital Ltd is a Newcastle upon Tyne–based web development agency providing professional website development, ongoing maintenance, and technical support to businesses throughout the UK.
+                </p>
+                <p class="text-base md:text-lg text-gray-700 mb-6 leading-relaxed">
+                    Founded in 2025 by Gary Voss, who previously served as Lead Developer at Satellite Creative, VossDigital continues to support many of Satellite’s long-standing clients while building new partnerships with businesses seeking reliable, professional web development services.
+                </p>
+                <h3 class="text-xl md:text-2xl font-semibold mb-4 text-[#0A0A0A]">Services include:</h3>
+                <ul class="list-disc list-inside text-base md:text-lg text-gray-700 mb-8 space-y-2 leading-relaxed">
+                    <li>Bespoke website development (Craft CMS, WordPress)</li>
+                    <li>Monthly website maintenance packages</li>
+                    <li>Web application development</li>
+                    <li>Technical support and consultation</li>
+                    <li>Hosting management</li>
+                </ul>
+
+                <h3 class="text-xl md:text-2xl font-semibold mb-4 text-[#0A0A0A]">Have a digital project in mind?</h3>
+                <button onclick="copyEmail('info@vossdigital.co.uk')" class="inline-block bg-gradient-to-br from-[#006CFF] to-[#0052CC] text-white py-3 px-8 rounded-full text-base font-semibold shadow-[0_4px_15px_rgba(0,108,255,0.3)] hover:shadow-[0_6px_20px_rgba(0,108,255,0.4)] transition-all duration-200 hover:scale-105 cursor-pointer border-0">info@vossdigital.co.uk</button>
                 <p id="emailCopied" class="text-xs text-green-600 mt-2 font-semibold opacity-0 transition-opacity duration-300">Copied to clipboard!</p>
-                <p class="text-sm text-gray-400 mt-6 font-normal">
-                    Site in development
-                    <span class="inline-flex gap-[0.3rem] ml-2 align-middle">
-                        <span class="dot w-1.5 h-1.5 bg-gray-400 rounded-full animate-pulse-dot"></span>
-                        <span class="dot w-1.5 h-1.5 bg-gray-400 rounded-full animate-pulse-dot"></span>
-                        <span class="dot w-1.5 h-1.5 bg-gray-400 rounded-full animate-pulse-dot"></span>
-                    </span>
+                
+                <h2 class="text-2xl md:text-3xl font-semibold mt-10 mb-4 text-[#0A0A0A]">Blackhurst.co - Design & Print Services</h2>
+                <p class="text-base md:text-lg text-gray-700 mb-6 leading-relaxed">
+                   Dylan Blackhurst, former Creative Director at Satellite Creative, continues to provide professional design and print services through his new venture, Blackhurst.co.
+                </p>
+                <p class="text-base md:text-lg text-gray-700 mb-6 leading-relaxed">
+                    With over 30 years of experience in creative direction, branding, and print production, Dylan continues to support many of Satellite’s long-standing clients with the same creativity, precision, and care they’ve come to expect.
+                </p>
+
+                <h3 class="text-xl md:text-2xl font-semibold mb-4 text-[#0A0A0A]">Have a design project in mind?</h3>
+                <button onclick="copyEmail('dylan@blackhurst.co')" class="inline-block bg-gradient-to-br from-[#006CFF] to-[#0052CC] text-white py-3 px-8 rounded-full text-base font-semibold shadow-[0_4px_15px_rgba(0,108,255,0.3)] hover:shadow-[0_6px_20px_rgba(0,108,255,0.4)] transition-all duration-200 hover:scale-105 cursor-pointer border-0">dylan@blackhurst.co</button>
+                <p id="emailCopied" class="text-xs text-green-600 mt-2 font-semibold opacity-0 transition-opacity duration-300">Copied to clipboard!</p>
+
+                <h2 class="text-2xl md:text-3xl font-semibold mt-10 mb-4 text-[#0A0A0A]">Continuing Collaboration</h2>
+                <p class="text-base md:text-lg text-gray-700 mb-6 leading-relaxed">
+                   VossDigital and Blackhurst.co will continue to collaborate closely to provide the same seamless blend of web, design, and print services that Satellite Creative was known for - ensuring clients continue to receive the same high-quality results and personal service moving forward.
                 </p>
             </div>
         </div>
